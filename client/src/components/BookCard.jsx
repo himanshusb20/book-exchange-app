@@ -11,6 +11,10 @@ const BookCard = ({book})=>{
                     by {book.author}
                 </p>
                 
+                <p className="mt-2 text-xs font-medium text-green-700">
+                    {book.category}
+                </p>
+                
                 <p className="mt-3 text-sm text-gray-600">
                     Condition: {book.condition}
                 </p>
