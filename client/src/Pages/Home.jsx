@@ -1,4 +1,36 @@
 import Navbar from '../components/Navbar.jsx'
+import BookCard from '../components/BookCard.jsx'
+
+const books = [
+  {
+    id: 1,
+    title: "Clean Code",
+    author: "Robert C. Martin",
+    condition: "Like New",
+    price: 350,
+  },
+  {
+    id: 2,
+    title: "Let Us C",
+    author: "Yashavant Kanetkar",
+    condition: "Good",
+    price: 180,
+  },
+  {
+    id: 3,
+    title: "Introduction to Algorithms",
+    author: "Thomas H. Cormen",
+    condition: "Used",
+    price: 500,
+  },
+  {
+    id: 4,
+    title: "The Pragmatic Programmer",
+    author: "David Thomas",
+    condition: "Like New",
+    price: 300,
+  },
+];
 
 const Home = ()=>{
     return(
@@ -26,14 +58,28 @@ const Home = ()=>{
                     className='mt-8 w-full max-w-lg rounded-xl border border-grey-300 bg-white px-5 py-4 outline-none focus:border-green-600'
                 />
             </section>
-            <section className='px-8 py-12'>
-                <h2 className='text-2xl font-bold text-gray-900'>
-                    Explore Books
-                </h2>
+            <section className="px-8 py-12">
+                <div className="mb-8 flex items-end justify-between">
+                    <div>
+                        <h2 className="text-2xl font-bold text-gray-900">
+                            Explore Books
+                        </h2>
 
-                <p className='mt-2 text-gray-600'>
-                    your next study companion is waiting.
-                </p>
+                        <p className="mt-2 text-gray-600">
+                            Your next study companion is waiting.
+                        </p>
+                    </div>
+
+                    <span className="text-sm text-gray-500">
+                        {books.length} books listed
+                    </span>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {books.map((book) => (
+                        <BookCard key={book.id} book={book} />
+                    ))}
+                </div>
             </section>
         </div>
     )
