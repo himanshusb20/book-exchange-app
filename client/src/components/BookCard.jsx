@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const BookCard = ({book})=>{
     return(
-        <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transiion hover:-translate-y-1 hover:shadow-md">
+        <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
             <div className="flex h-40 items-center justify-center bg-green-50 text-5xl">📚</div>
             <div className="p-5">
                 <h3 className="text-lg font-bold text-gray-900">
@@ -24,9 +26,13 @@ const BookCard = ({book})=>{
                         ₹{book.price}
                     </span>
 
-                    <button className="rounded-lg bg-green-700 px-3 py-2 text-sm text-white hover:bg-green-800">
+                    <Link
+                        to={`/books/${book.id}`}
+                        className="rounded-lg bg-green-700 px-3 py-2 text-sm text-white hover:bg-green-800"
+                    >
                         View Details
-                    </button>
+                    </Link>
+                    
                 </div>
             </div>
         </div>
