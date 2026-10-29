@@ -94,7 +94,7 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="login-options">
+              <div className="login-options">
             <label className="remember-me">
               <input
                 type="checkbox"
