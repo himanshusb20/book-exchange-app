@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const Navbar = ()=>{
+    const navigate = useNavigate();
 
     return (
         <nav className="flex items-center justify-between border-b bg-white px-8 py-4">
@@ -15,7 +18,10 @@ const Navbar = ()=>{
                 Sell a Book
                 </a>
 
-                <button className="rounded-lg bg-green-700 px-5 py-2 text-white hover:bg-green-800">
+                <button
+                    onClick={() => navigate("/login")}
+                    className="rounded-lg bg-green-700 px-5 py-2 text-white hover:bg-green-800"
+                >
                 Login/Sign-Up
                 </button>
             </div>
