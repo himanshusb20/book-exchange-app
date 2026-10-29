@@ -1,42 +1,41 @@
 import { Link } from "react-router-dom";
+import "./BookCard.css";
 
-const BookCard = ({book})=>{
-    return(
-        <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-            <div className="flex h-40 items-center justify-center bg-green-50 text-5xl">📚</div>
-            <div className="p-5">
-                <h3 className="text-lg font-bold text-gray-900">
-                    {book.title}
-                </h3>
+const BookCard = ({ book }) => {
+  const conditionClass = book.condition.toLowerCase().replaceAll(" ", "-");
 
-                <p className="mt-1 text-sm text-gray-500">
-                    by {book.author}
-                </p>
-                
-                <p className="mt-2 text-xs font-medium text-green-700">
-                    {book.category}
-                </p>
-                
-                <p className="mt-3 text-sm text-gray-600">
-                    Condition: {book.condition}
-                </p>
+  return (
+    <article className="book-card">
+      <div className="book-cover-wrap">
+        <img
+          className="book-cover"
+          src={book.image}
+          alt={`${book.title} book cover`}
+          loading="lazy"
+          onError={(event) => {
+            event.currentTarget.style.display = "none";
+            event.currentTarget.parentElement.classList.add("book-cover-fallback");
+          }}
+        />
+        {!book.image && <span className="book-fallback-icon" aria-hidden="true">📚</span>}
+        <span className={`book-condition book-condition-${conditionClass}`}>
+          {book.condition}
+        </span>
+      </div>
 
-                <div className="m-5 flex item-center justify-between">
-                    <span className="text-lg font-bold text-green-700">
-                        ₹{book.price}
-                    </span>
-
-                    <Link
-                        to={`/books/${book.id}`}
-                        className="rounded-lg bg-green-700 px-3 py-2 text-sm text-white hover:bg-green-800"
-                    >
-                        View Details
-                    </Link>
-                    
-                </div>
-            </div>
+      <div className="book-card-content">
+        <span className="book-category">{book.category}</span>
+        <h3>{book.title}</h3>
+        <p className="book-author">by {book.author}</p>
+        <div className="book-card-footer">
+          <strong className="book-price">₹{book.price}</strong>
+          <Link className="book-details-button" to={`/books/${book.id}`}>
+            View Details <span aria-hidden="true">→</span>
+          </Link>
         </div>
-    )
-}
+      </div>
+    </article>
+  );
+};
 
 export default BookCard;

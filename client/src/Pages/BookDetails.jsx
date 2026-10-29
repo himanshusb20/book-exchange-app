@@ -23,8 +23,16 @@ const BookDetails = ()=>{
             </Link>
 
             <div className='mt-6 grid gap-8 rounded-2xl border border-gray-200 p-6 sm:grid-cols-2'>
-                <div className='flex min-h-64 items-center justify-center rounded-xl bg-green-50 text-8xl'>
-                    📚
+                <div className='flex min-h-64 items-center justify-center overflow-hidden rounded-xl bg-green-50'>
+                    {book.image ? (
+                        <img
+                            className='h-full w-full object-cover'
+                            src={book.image}
+                            alt={`${book.title} book cover`}
+                        />
+                    ) : (
+                        <span className='text-8xl' aria-hidden='true'>📚</span>
+                    )}
                 </div>
 
                 <div>

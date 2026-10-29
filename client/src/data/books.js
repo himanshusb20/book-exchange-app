@@ -1,4 +1,4 @@
- export const books = [
+export const books = [
   {
     id: 1,
     title: "Clean Code",
@@ -6,6 +6,7 @@
     condition: "Like New",
     category: "Programming",
     price: 350,
+    image: "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@
     condition: "Good",
     category: "Programming",
     price: 180,
+    image: "https://covers.openlibrary.org/b/isbn/9788183331630-L.jpg",
   },
   {
     id: 3,
@@ -22,13 +24,33 @@
     condition: "Used",
     category: "Computer Science",
     price: 500,
+    image: "https://covers.openlibrary.org/b/isbn/9780262033848-L.jpg",
   },
   {
     id: 4,
     title: "The Pragmatic Programmer",
-    author: "David Thomas",
+    author: "David Thomas and Andrew Hunt",
     condition: "Like New",
     category: "Programming",
     price: 300,
+    image: "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg",
+  },
+  {
+    id: 5,
+    title: "Discrete Mathematics and Its Applications",
+    author: "Kenneth H. Rosen",
+    condition: "Good",
+    category: "Mathematics",
+    price: 420,
+    image: "https://covers.openlibrary.org/b/isbn/9781260091991-L.jpg",
+  },
+  {
+    id: 6,
+    title: "The Design of Everyday Things",
+    author: "Don Norman",
+    condition: "Like New",
+    category: "Design",
+    price: 275,
+    image: "https://covers.openlibrary.org/b/isbn/9780465050659-L.jpg",
   },
 ];

@@ -1,0 +1,60 @@
+.home-page { min-height: 100vh; background: #f8fafc; color: #172033; }
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  display: grid;
+  place-items: center;
+  padding: 64px 24px;
+  background: linear-gradient(120deg, #ecfdf5 0%, #dbeafe 58%, #fff7ed 100%);
+  text-align: center;
+}
+
+.home-hero-content { position: relative; z-index: 1; width: min(760px, 100%); }
+.hero-eyebrow { display: inline-block; margin-bottom: 16px; padding: 7px 13px; border-radius: 999px; background: rgba(255,255,255,.78); color: #15803d; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.home-hero h1 { margin: 0; color: #133b2d; font-size: clamp(38px, 6vw, 66px); line-height: 1.05; letter-spacing: -.035em; }
+.home-hero p { max-width: 650px; margin: 20px auto 0; color: #475569; font-size: 18px; line-height: 1.65; }
+.home-search-box { box-sizing: border-box; width: min(650px, 100%); height: 58px; margin: 32px auto 0; display: flex; align-items: center; gap: 12px; padding: 0 18px; border: 1px solid rgba(148,163,184,.35); border-radius: 16px; background: #fff; box-shadow: 0 16px 35px rgba(15,23,42,.11); }
+.home-search-box > span { color: #15803d; font-size: 25px; transform: rotate(-15deg); }
+.home-search-box input { width: 100%; border: 0; outline: 0; background: transparent; color: #172033; font-size: 16px; }
+.home-search-box:focus-within { border-color: #15803d; box-shadow: 0 16px 35px rgba(21,128,61,.16), 0 0 0 4px rgba(21,128,61,.08); }
+.hero-decoration { position: absolute; border-radius: 50%; filter: blur(1px); opacity: .65; }
+.hero-decoration-one { width: 180px; height: 180px; top: -55px; left: 5%; background: #bbf7d0; }
+.hero-decoration-two { width: 130px; height: 130px; right: 8%; bottom: 20px; background: #fed7aa; }
+
+.home-catalog { width: min(1240px, calc(100% - 40px)); margin: 0 auto; padding: 54px 0 80px; }
+.catalog-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.catalog-kicker { color: #f97316; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.catalog-heading h2 { margin: 6px 0 4px; color: #172033; font-size: 34px; }
+.catalog-heading p { margin: 0; color: #64748b; }
+.books-count { flex-shrink: 0; padding: 8px 12px; border-radius: 999px; background: #e0f2fe; color: #0369a1; font-size: 13px; font-weight: 700; }
+
+.book-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 30px; padding: 18px; border: 1px solid #e2e8f0; border-radius: 16px; background: #fff; box-shadow: 0 6px 20px rgba(15,23,42,.04); }
+.book-filters label { min-width: 0; }
+.book-filters label > span { display: block; margin-bottom: 7px; color: #64748b; font-size: 12px; font-weight: 700; }
+.book-filters select { box-sizing: border-box; width: 100%; height: 44px; padding: 0 12px; border: 1px solid #dbe3ed; border-radius: 10px; outline: none; background: #fff; color: #334155; }
+.book-filters select:focus { border-color: #15803d; box-shadow: 0 0 0 3px rgba(21,128,61,.09); }
+
+.books-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.no-books { padding: 60px 20px; border: 1px dashed #cbd5e1; border-radius: 18px; background: #fff; text-align: center; }
+.no-books span { font-size: 50px; }
+.no-books h3 { margin: 12px 0 6px; color: #334155; }
+.no-books p { margin: 0; color: #64748b; }
+
+@media (max-width: 1024px) { .books-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .home-hero { min-height: 380px; padding: 48px 18px; }
+  .home-hero h1 { font-size: 40px; }
+  .home-hero p { font-size: 16px; }
+  .book-filters { grid-template-columns: 1fr; }
+  .books-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .catalog-heading { align-items: flex-start; }
+}
+@media (max-width: 520px) {
+  .home-catalog { width: min(100% - 28px, 1240px); padding-top: 38px; }
+  .home-hero h1 { font-size: 34px; }
+  .catalog-heading { flex-direction: column; }
+  .books-grid { grid-template-columns: 1fr; }
+  .home-search-box { height: 54px; }
+}

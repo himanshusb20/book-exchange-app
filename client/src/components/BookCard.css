@@ -1,0 +1,119 @@
+.book-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.book-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 38px rgba(21, 128, 61, 0.14);
+}
+
+.book-cover-wrap {
+  position: relative;
+  height: 270px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(145deg, #ecfdf5, #dbeafe);
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 260ms ease;
+}
+
+.book-card:hover .book-cover { transform: scale(1.035); }
+
+.book-cover-fallback::after {
+  content: "📚";
+  font-size: 62px;
+}
+
+.book-fallback-icon { font-size: 62px; }
+
+.book-condition {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 750;
+  box-shadow: 0 5px 14px rgba(15, 23, 42, 0.12);
+}
+
+.book-condition-like-new { background: #dcfce7; color: #166534; }
+.book-condition-good { background: #fef3c7; color: #92400e; }
+.book-condition-used { background: #ffedd5; color: #9a3412; }
+
+.book-card-content { padding: 20px; }
+
+.book-category {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.book-card h3 {
+  min-height: 48px;
+  margin: 0;
+  color: #172033;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.book-author {
+  min-height: 40px;
+  margin: 8px 0 18px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.book-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #eef2f7;
+}
+
+.book-price { color: #15803d; font-size: 20px; }
+
+.book-details-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: #15803d;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.book-details-button:hover {
+  background: #166534;
+  transform: translateX(2px);
+}
+
+@media (max-width: 640px) {
+  .book-cover-wrap { height: 330px; }
+}
